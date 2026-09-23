@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservasi Ruang | SIMART</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-badge">RBR</span>
+                <span class="logo-text">SIMART</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="katalog.html">Katalog Buku</a>
+                <a href="reservasi.html" class="active">Reservasi Ruang</a>
+            </nav>
+            <div class="nav-auth">
+                <a href="index.html" class="btn-secondary">Kembali</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <h2>Formulir Reservasi Ruang Budaya</h2>
+        <p class="subtitle">Silakan isi detail pengajuan reservasi ruangan untuk kegiatan Anda.</p>
+
+        <form class="reservation-form">
+            <div class="form-group">
+                <label>Nama Penanggung Jawab / Komunitas</label>
+                <input type="text" placeholder="Contoh: Komunitas Sastra Malang" required>
+            </div>
+            <div class="form-group">
+                <label>Pilih Ruangan</label>
+                <select required>
+                    <option value="">-- Pilih Ruangan --</option>
+                    <option value="pendopo">Pendopo Utama (100-150 Orang)</option>
+                    <option value="diskusi">Ruang Diskusi & Lesehan (16-40 Orang)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Tanggal Tanggal & Jam Kegiatan</label>
+                <input type="datetime-local" required>
+            </div>
+            <div class="form-group">
+                <label>Deskripsi Kegiatan</label>
+                <textarea rows="4" placeholder="Jelaskan secara singkat kegiatan yang akan dilaksanakan..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary">Kirim Pengajuan Reservasi</button>
+        </form>
+    </main>
+</body>
+</html>

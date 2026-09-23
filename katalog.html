@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Buku | SIMART</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-badge">RBR</span>
+                <span class="logo-text">SIMART</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="katalog.html" class="active">Katalog Buku</a>
+                <a href="reservasi.html">Reservasi Ruang</a>
+            </nav>
+            <div class="nav-auth">
+                <a href="index.html" class="btn-secondary">Kembali</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container page-content">
+        <h2>Katalog Pembelian Buku</h2>
+        <p class="subtitle">Cari dan pilih buku kesukaanmu untuk dibeli langsung.</p>
+
+        <!-- Filter & Search Panel -->
+        <div class="filter-panel">
+            <input type="text" class="search-input" placeholder="🔍 Cari judul buku atau penulis...">
+            <div class="filter-tags">
+                <button class="tag active">Semua</button>
+                <button class="tag">Sastra</button>
+                <button class="tag">Sejarah</button>
+                <button class="tag">Seni</button>
+                <button class="tag">Umum</button>
+            </div>
+        </div>
+
+        <div class="book-grid">
+            <div class="book-card">
+                <div class="book-cover"><span>Cover Buku</span></div>
+                <div class="book-info">
+                    <span class="category-badge">SASTRA</span>
+                    <h3>Bumi Manusia</h3>
+                    <p class="author">Pramoedya Ananta Toer</p>
+                    <div class="book-footer">
+                        <span class="price">Rp 85.000</span>
+                        <button class="btn-primary btn-sm">+ Tambah</button>
+                    </div>
+                </div>
+            </div>
+            <div class="book-card">
+                <div class="book-cover"><span>Cover Buku</span></div>
+                <div class="book-info">
+                    <span class="category-badge">SASTRA</span>
+                    <h3>Laskar Pelangi</h3>
+                    <p class="author">Andrea Hirata</p>
+                    <div class="book-footer">
+                        <span class="price">Rp 70.000</span>
+                        <button class="btn-primary btn-sm">+ Tambah</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
