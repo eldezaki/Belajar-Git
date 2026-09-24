@@ -8,22 +8,28 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-badge">RBR</span>
-                <span class="logo-text">SIMART</span>
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html">Beranda</a>
-                <a href="index.html#tentang">Tentang</a>
-                <a href="katalog.html" class="active">Katalog Buku</a>
-                <a href="reservasi.html">Reservasi Ruang</a>
-            </nav>
-            <div class="nav-auth">
-                <a href="index.html" class="btn-secondary">Kembali</a>
-            </div>
+    <div class="container nav-container">
+        <div class="logo">
+            <span class="logo-badge">RBR</span>
+            <span class="logo-text">SIMART</span>
         </div>
-    </header>
+        <nav class="nav-menu">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#tentang">Tentang</a>
+            <a href="katalog.html" class="active">Katalog Buku</a>
+            <a href="reservasi.html">Reservasi Ruang</a>
+        </nav>
+        
+        <!-- Profil User (Sudah Login) -->
+       <!-- Profil User (Arahkan ke profile.html) -->
+        <div class="nav-auth">
+            <a href="profile.html" class="user-profile" title="Ke Pengaturan Profil">
+                <img src="https://via.placeholder.com/40" alt="Foto Profil" class="profile-avatar">
+                <span class="user-name">Pengguna</span>
+            </a>
+        </div>
+    </div>
+</header>
 
     <main class="container page-content">
         <h2>Katalog Pembelian Buku</h2>
@@ -31,22 +37,23 @@
 
         <!-- Filter & Search Panel -->
         <div class="filter-panel">
-            <input type="text" class="search-input" placeholder="🔍 Cari judul buku atau penulis...">
-            <div class="filter-tags">
-                <button class="tag active">Semua</button>
-                <button class="tag">Sastra</button>
-                <button class="tag">Sejarah</button>
-                <button class="tag">Seni</button>
-                <button class="tag">Umum</button>
+            <input type="text" id="search-input" class="search-input" placeholder="🔍 Cari judul buku atau penulis...">
+            <div class="filter-tags" id="filter-tags">
+                <button class="tag active" data-category="semua">Semua</button>
+                <button class="tag" data-category="sastra">Sastra</button>
+                <button class="tag" data-category="sejarah">Sejarah</button>
+                <button class="tag" data-category="seni">Seni</button>
+                <button class="tag" data-category="umum">Umum</button>
             </div>
         </div>
 
-        <div class="book-grid">
-            <div class="book-card">
+        <!-- Book Grid Container -->
+        <div class="book-grid" id="book-grid">
+            <div class="book-card" data-category="sastra">
                 <div class="book-cover"><span>Cover Buku</span></div>
                 <div class="book-info">
                     <span class="category-badge">SASTRA</span>
-                    <h3>Bumi Manusia</h3>
+                    <h3 class="book-title">Bumi Manusia</h3>
                     <p class="author">Pramoedya Ananta Toer</p>
                     <div class="book-footer">
                         <span class="price">Rp 85.000</span>
@@ -54,11 +61,12 @@
                     </div>
                 </div>
             </div>
-            <div class="book-card">
+
+            <div class="book-card" data-category="sastra">
                 <div class="book-cover"><span>Cover Buku</span></div>
                 <div class="book-info">
                     <span class="category-badge">SASTRA</span>
-                    <h3>Laskar Pelangi</h3>
+                    <h3 class="book-title">Laskar Pelangi</h3>
                     <p class="author">Andrea Hirata</p>
                     <div class="book-footer">
                         <span class="price">Rp 70.000</span>
@@ -66,7 +74,50 @@
                     </div>
                 </div>
             </div>
+
+            <div class="book-card" data-category="sejarah">
+                <div class="book-cover"><span>Cover Buku</span></div>
+                <div class="book-info">
+                    <span class="category-badge">SEJARAH</span>
+                    <h3 class="book-title">Sapiens</h3>
+                    <p class="author">Yuval Noah Harari</p>
+                    <div class="book-footer">
+                        <span class="price">Rp 120.000</span>
+                        <button class="btn-primary btn-sm">+ Tambah</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="umum">
+                <div class="book-cover"><span>Cover Buku</span></div>
+                <div class="book-info">
+                    <span class="category-badge">UMUM</span>
+                    <h3 class="book-title">Filosofi Teras</h3>
+                    <p class="author">Henry Manampiring</p>
+                    <div class="book-footer">
+                        <span class="price">Rp 88.000</span>
+                        <button class="btn-primary btn-sm">+ Tambah</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card" data-category="seni">
+                <div class="book-cover"><span>Cover Buku</span></div>
+                <div class="book-info">
+                    <span class="category-badge">SENI</span>
+                    <h3 class="book-title">Aesthetic Theory</h3>
+                    <p class="author">Theodor W. Adorno</p>
+                    <div class="book-footer">
+                        <span class="price">Rp 110.000</span>
+                        <button class="btn-primary btn-sm">+ Tambah</button>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <p id="no-result" class="text-center margin-top-30" style="display: none; color: #718096;">Buku tidak ditemukan.</p>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

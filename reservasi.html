@@ -8,50 +8,104 @@
 </head>
 <body>
     <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <span class="logo-badge">RBR</span>
-                <span class="logo-text">SIMART</span>
-            </div>
-            <nav class="nav-menu">
-                <a href="index.html">Beranda</a>
-                <a href="index.html#tentang">Tentang</a>
-                <a href="katalog.html">Katalog Buku</a>
-                <a href="reservasi.html" class="active">Reservasi Ruang</a>
-            </nav>
-            <div class="nav-auth">
-                <a href="index.html" class="btn-secondary">Kembali</a>
-            </div>
+    <div class="container nav-container">
+        <div class="logo">
+            <span class="logo-badge">RBR</span>
+            <span class="logo-text">SIMART</span>
         </div>
-    </header>
+        <nav class="nav-menu">
+            <a href="index.html">Beranda</a>
+            <a href="index.html#tentang">Tentang</a>
+            <a href="katalog.html">Katalog Buku</a>
+            <a href="reservasi.html" class="active">Reservasi Ruang</a>
+        </nav>
+        
+        <!-- Profil User (Sudah Login) -->
+        <!-- Profil User (Arahkan ke profile.html) -->
+        <div class="nav-auth">
+            <a href="profile.html" class="user-profile" title="Ke Pengaturan Profil">
+                <img src="https://via.placeholder.com/40" alt="Foto Profil" class="profile-avatar">
+                <span class="user-name">Pengguna</span>
+            </a>
+        </div>
+    </div>
+</header>
 
     <main class="container page-content">
-        <h2>Formulir Reservasi Ruang Budaya</h2>
-        <p class="subtitle">Silakan isi detail pengajuan reservasi ruangan untuk kegiatan Anda.</p>
+        <h2>Jadwal & Formulir Reservasi Ruang</h2>
+        <p class="subtitle">Periksa ketersediaan jadwal pada kalender sebelum mengisi form pengajuan reservasi.</p>
 
-        <form class="reservation-form">
-            <div class="form-group">
-                <label>Nama Penanggung Jawab / Komunitas</label>
-                <input type="text" placeholder="Contoh: Komunitas Sastra Malang" required>
+        <div class="reservation-layout">
+            <!-- Kolom Kiri: Kalender Jadwal -->
+            <div class="calendar-section">
+                <div class="calendar-card">
+                    <div class="calendar-header">
+                        <button id="prev-month" class="btn-sm btn-secondary">&lt;</button>
+                        <h3 id="calendar-month-year">September 2026</h3>
+                        <button id="next-month" class="btn-sm btn-secondary">&gt;</button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span>
+                    </div>
+                    <div class="calendar-days" id="calendar-days">
+                        <!-- Render hari otomatis lewat JavaScript -->
+                    </div>
+                    <div class="calendar-legend">
+                        <span class="legend-item"><span class="dot available"></span>Tersedia</span>
+                        <span class="legend-item"><span class="dot booked"></span>Terisi (Full)</span>
+                    </div>
+                </div>
+
+                <!-- Detail Jadwal Terisi pada Tanggal Pilihan -->
+                <div class="schedule-info-box">
+                    <h4>Jadwal Terisi Hari Ini:</h4>
+                    <ul id="schedule-list">
+                        <li><strong>Pendopo Utama:</strong> Workshop Teater (10.00 - 14.00 WIB)</li>
+                        <li><strong>Ruang Diskusi:</strong> Kumpul Komunitas (15.00 - 17.00 WIB)</li>
+                    </ul>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Pilih Ruangan</label>
-                <select required>
-                    <option value="">-- Pilih Ruangan --</option>
-                    <option value="pendopo">Pendopo Utama (100-150 Orang)</option>
-                    <option value="diskusi">Ruang Diskusi & Lesehan (16-40 Orang)</option>
-                </select>
+
+            <!-- Kolom Kanan: Form Reservasi -->
+            <div class="form-section">
+                <form class="reservation-form">
+                    <h3>Form Pengajuan</h3>
+                    <div class="form-group">
+                        <label>Nama Penanggung Jawab / Komunitas</label>
+                        <input type="text" placeholder="Contoh: Komunitas Sastra Malang" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Pilih Ruangan</label>
+                        <select required>
+                            <option value="">-- Pilih Ruangan --</option>
+                            <option value="pendopo">Pendopo Utama (100-150 Orang)</option>
+                            <option value="diskusi">Ruang Diskusi & Lesehan (16-40 Orang)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tanggal Reservasi</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group row-time">
+                        <div>
+                            <label>Jam Mulai</label>
+                            <input type="time" required>
+                        </div>
+                        <div>
+                            <label>Jam Selesai</label>
+                            <input type="time" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Deskripsi Kegiatan</label>
+                        <textarea rows="3" placeholder="Jelaskan secara singkat agenda kegiatan..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary full-width">Kirim Pengajuan Reservasi</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label>Tanggal Tanggal & Jam Kegiatan</label>
-                <input type="datetime-local" required>
-            </div>
-            <div class="form-group">
-                <label>Deskripsi Kegiatan</label>
-                <textarea rows="4" placeholder="Jelaskan secara singkat kegiatan yang akan dilaksanakan..."></textarea>
-            </div>
-            <button type="submit" class="btn-primary">Kirim Pengajuan Reservasi</button>
-        </form>
+        </div>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

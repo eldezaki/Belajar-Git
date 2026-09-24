@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya | SIMART</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="logo-badge">RBR</span>
+                <span class="logo-text">SIMART</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="index.html">Beranda</a>
+                <a href="index.html#tentang">Tentang</a>
+                <a href="katalog.html">Katalog Buku</a>
+                <a href="reservasi.html">Reservasi Ruang</a>
+            </nav>
+            
+            <div class="nav-auth">
+                <a href="profile.html" class="user-profile active" title="Profil Saya">
+                    <img src="https://via.placeholder.com/40" alt="Foto Profil" class="profile-avatar" id="nav-avatar-img">
+                    <span class="user-name" id="nav-user-name">Pengguna</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container page-content">
+        <h2>Pengaturan Profil</h2>
+        <p class="subtitle">Kelola informasi pribadi, foto profil, dan kata sandi akun Anda.</p>
+
+        <div class="profile-layout">
+            <!-- Sidebar / Card Upload Foto Profil -->
+            <div class="profile-card text-center">
+                <div class="avatar-upload-wrapper">
+                    <img src="https://via.placeholder.com/150" alt="Foto Profil" id="profile-preview-img" class="avatar-large">
+                    <label for="avatar-input" class="btn-primary btn-sm btn-change-avatar">
+                        📷 Ubah Foto
+                    </label>
+                    <input type="file" id="avatar-input" accept="image/*" hidden>
+                </div>
+                <h3 id="display-name-text">Pengguna</h3>
+                <p class="user-email-text" id="display-email-text">pengguna@ratna.org</p>
+                <span class="role-badge">Anggota Komunitas</span>
+            </div>
+
+            <!-- Form Edit Profil -->
+            <div class="profile-form-section">
+                <form class="reservation-form" id="form-edit-profile">
+                    <h3>Informasi Pribadi</h3>
+                    
+                    <div class="form-group">
+                        <label>Nama Tampilan (Display Name)</label>
+                        <input type="text" id="input-display-name" value="Pengguna" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nama Lengkap (Sesuai KTP)</label>
+                        <input type="text" id="input-full-name" value="Pengguna SIMART" required>
+                    </div>
+
+                    <div class="form-group row-time">
+                        <div>
+                            <label>Alamat Email</label>
+                            <input type="email" id="input-email" value="pengguna@ratna.org" required>
+                        </div>
+                        <div>
+                            <label>Nomor WhatsApp</label>
+                            <input type="tel" id="input-phone" value="081234567890" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nama Komunitas / Instansi (Opsional)</label>
+                        <input type="text" id="input-organization" placeholder="Contoh: Komunitas Sastra Malang">
+                    </div>
+
+                    <hr class="form-divider">
+
+                    <h3>Ubah Kata Sandi</h3>
+                    <div class="form-group">
+                        <label>Kata Sandi Saat Ini</label>
+                        <input type="password" id="input-current-password" placeholder="Masukkan password lama">
+                    </div>
+
+                    <div class="form-group row-time">
+                        <div>
+                            <label>Kata Sandi Baru</label>
+                            <input type="password" id="input-new-password" placeholder="Minimal 8 karakter">
+                        </div>
+                        <div>
+                            <label>Konfirmasi Kata Sandi Baru</label>
+                            <input type="password" id="input-confirm-password" placeholder="Ulangi kata sandi baru">
+                        </div>
+                    </div>
+
+                    <div class="profile-actions">
+                        <button type="submit" class="btn-primary">Simpan Perubahan</button>
+                        <button type="button" class="btn-secondary" id="btn-cancel-profile">Batal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
