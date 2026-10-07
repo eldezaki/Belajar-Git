@@ -108,6 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // reservasi lewat WA
+    
+    const formWAReservasi = document.getElementById('form-wa-reservasi');
+if (formWAReservasi) {
+    formWAReservasi.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const ruangan = document.getElementById('wa-ruangan').value;
+        const tanggal = document.getElementById('wa-tanggal').value;
+        const agenda = document.getElementById('wa-agenda').value;
+
+        const adminPhone = '6287865169799'; // Ganti dengan nomor WA Admin RBR
+        const textMessage = `Halo Admin Rumah Budaya Ratna, saya ingin mengajukan reservasi tempat:\n\n- Ruangan: ${ruangan}\n- Waktu: ${tanggal}\n- Agenda: ${agenda}\n\nApakah jadwal tersebut tersedia?`;
+
+        window.open(`https://wa.me/${adminPhone}?text=${encodeURIComponent(textMessage)}`, '_blank');
+    });
+}
+
     // --- 4. PROFILE PAGE INTERACTIONS ---
 const avatarInput = document.getElementById('avatar-input');
 const profilePreviewImg = document.getElementById('profile-preview-img');

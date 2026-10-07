@@ -67,41 +67,38 @@
             </div>
 
             <!-- Kolom Kanan: Form Reservasi -->
+            <!-- Kolom Kanan: Informasi & Tombol Reservasi via WA -->
             <div class="form-section">
-                <form class="reservation-form">
-                    <h3>Form Pengajuan</h3>
-                    <div class="form-group">
-                        <label>Nama Penanggung Jawab / Komunitas</label>
-                        <input type="text" placeholder="Contoh: Komunitas Sastra Malang" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Pilih Ruangan</label>
-                        <select required>
-                            <option value="">-- Pilih Ruangan --</option>
-                            <option value="pendopo">Pendopo Utama (100-150 Orang)</option>
-                            <option value="diskusi">Ruang Diskusi & Lesehan (16-40 Orang)</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Tanggal Reservasi</label>
-                        <input type="date" required>
-                    </div>
-                    <div class="form-group row-time">
-                        <div>
-                            <label>Jam Mulai</label>
-                            <input type="time" required>
+                <div class="reservation-form">
+                    <h3>Alur Reservasi Ruangan</h3>
+                    <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px;">
+                        Peminjaman ruangan di Rumah Budaya Ratna dilakukan secara langsung melalui WhatsApp Admin. Silakan periksa ketersediaan jadwal pada kalender di sebelah kiri terlebih dahulu.
+                    </p>
+
+                    <form id="form-wa-reservasi">
+                        <div class="form-group">
+                            <label>Pilih Ruangan</label>
+                            <select id="wa-ruangan" required>
+                                <option value="">-- Pilih Ruangan --</option>
+                                <option value="Pendopo Utama">Pendopo Utama (100-150 Orang)</option>
+                                <option value="Ruang Diskusi & Lesehan">Ruang Diskusi & Lesehan (16-40 Orang)</option>
+                            </select>
                         </div>
-                        <div>
-                            <label>Jam Selesai</label>
-                            <input type="time" required>
+                        <div class="form-group">
+                            <label>Rencana Tanggal & Jam</label>
+                            <input type="text" id="wa-tanggal" placeholder="Contoh: 15 September 2026, 10:00 - 14:00 WIB" required>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Deskripsi Kegiatan</label>
-                        <textarea rows="3" placeholder="Jelaskan secara singkat agenda kegiatan..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-primary full-width">Kirim Pengajuan Reservasi</button>
-                </form>
+                        <div class="form-group">
+                            <label>Nama Komunitas / Agenda</label>
+                            <input type="text" id="wa-agenda" placeholder="Contoh: Komunitas Sastra / Diskusi Buku" required>
+                        </div>
+
+                        <!-- Tombol Redirect Chat WhatsApp -->
+                        <button type="submit" class="btn-primary full-width btn-large" style="background-color: #25D366; color: white;">
+                            💬 Chat WhatsApp Admin
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </main>
