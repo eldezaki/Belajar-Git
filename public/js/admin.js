@@ -30,14 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.popup-overlay:not([hidden])').forEach(closePopup);
     });
 
-    // popup tambah buku
-    const bookPopup = document.getElementById('book-popup');
-    document.getElementById('btn-add-book').addEventListener('click', () => {
-        document.getElementById('form-add-book').reset();
-        openPopup(bookPopup);
-        document.getElementById('book-judul').focus();
-    });
-
     // popup edit reservasi
     const rsvPopup = document.getElementById('rsv-popup');
     const fields = {

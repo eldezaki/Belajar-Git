@@ -121,8 +121,8 @@
 
                 <div class="admin-card">
                     <div class="table-toolbar">
-                        <input type="text" class="search-input" placeholder="🔍 Cari judul atau penulis">
-                        <span class="table-count">Menampilkan 8 buku</span>
+                        <input type="text" id="book-search" class="search-input" placeholder="🔍 Cari judul atau penulis">
+                        <span class="table-count" id="book-count">Menampilkan 8 buku</span>
                     </div>
                     <table class="data-table">
                         <thead>
@@ -246,6 +246,7 @@
                         </div>
 
                         <form id="form-add-book">
+                            <input type="hidden" id="book-id">
                             <div class="form-group">
                                 <label for="book-judul">Judul Buku</label>
                                 <input type="text" id="book-judul" placeholder="Contoh: Bumi Manusia">
@@ -301,7 +302,7 @@
 
                             <div class="popup-actions">
                                 <button type="button" class="btn-secondary" data-popup-close>Batal</button>
-                                <button type="button" class="btn-primary">Simpan Buku</button>
+                                <button type="button" class="btn-primary" id="btn-save-book">Simpan Buku</button>
                             </div>
                         </form>
                     </div>
@@ -784,5 +785,6 @@
         </main>
     </div>
     <script src="js/admin.js"></script>
+    <script src="js/books.js"></script>
 </body>
 </html>
